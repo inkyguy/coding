@@ -14,7 +14,7 @@ def solve(a,b):
     #flag=False
     for i in range(1,n):
         c1=solve(a[:i],b[:i]) and solve(a[i:],b[i:])
-        c2=solve(a[-i:],b[:i]) and solve(a[:-i],b[i:])
+        c2=solve(a[n-i:],b[:i]) and solve(a[:n-i],b[i:])# a[n-i:] is same as a[-i:]
         if c1 or c2:
             return True
         
