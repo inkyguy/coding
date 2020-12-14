@@ -1,5 +1,5 @@
-a="sohail"
-b="lhsoai"
+a="grate"
+b="great"
 
 def solve(a,b):
     n=len(a)
@@ -14,7 +14,7 @@ def solve(a,b):
     #flag=False
     for i in range(1,n):
         c1=solve(a[:i],b[:i]) and solve(a[i:],b[i:])
-        c2=solve(a[n-i:],b[:i]) and solve(a[:n-i],b[i:])# a[n-i:] is same as a[-i:]
+        c2=solve(a[n-i:],b[:i]) and solve(a[:n-i],b[i:]) #a[n-i:]==a[-i:] both are same
         if c1 or c2:
             return True
         
