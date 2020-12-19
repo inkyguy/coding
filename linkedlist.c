@@ -8,7 +8,7 @@ void insertend();
 void insertbeginning();
 void reverse();
 void del();
-
+void deletemid();
 
 struct node{
     int data;
@@ -135,6 +135,7 @@ int main(){
         printf("6.insertbegin\n");
         printf("7.reverse\n");
         printf("8.exit\n");
+        printf("9.deletemid\n");
         printf("enter your option: ");
 
         scanf("%d",&option);
@@ -163,6 +164,9 @@ int main(){
                 break;
             case 8:
                 exit(5);
+            case 9:
+                deletemid();
+                break;
         }
     }
 }
@@ -180,4 +184,32 @@ void reverse(){
         current=nxt;
     }
     head=prev;
+}
+
+void deletemid(){ 
+    struct node *temp,*ptr,*dup;
+    ptr=(struct node*)malloc(sizeof(struct node));
+    temp=(struct node*)malloc(sizeof(struct node));
+    dup=(struct node*)malloc(sizeof(struct node));
+    ptr=head;
+    int c=0,k,i;
+
+    while(ptr!=NULL){
+        c+=1;
+        ptr=ptr->next;
+    }
+    k=c/2;
+    //printf("%d",k);
+    ptr=head;
+    if(ptr->next!=NULL){
+    for(i=1;i<k;i++){
+    
+        ptr=ptr->next;
+//c--;
+    }
+    dup=ptr;
+    ptr->next=ptr->next->next;
+    //free(dup);
+    }
+
 }
